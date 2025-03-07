@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: Prices API Specification
+  description: |-
+    A simple pricing API that allows to obtain
+    the price of a product given its id, brand and
+    a date.
+  version: 1.0.0-SNAPSHOT
+servers:
+  - url: https://testenvironment.org/api/v1
+tags:
+  - name: prices
+    description: Operations related to prices
+paths:
+  /prices:
+    get:
+      tags:
+        - prices
+      summary: Get the price of a product
+      description: |-
+        Returns the price of a product given its id, brand and date.
+      operationId: getPrice
+      parameters:
+        - name: productId
+          in: query
+          description: The id of the product
+          required: true
+          schema:
+            type: integer
+        - name: brandId
+          in: query
+          description: The brand id of the product
+          required: true
+          schema:
+            type: integer
+        - name: date
+          in: query
+          description: The date for which the price is requested
+          required: true
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: The price of the product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price' 
+        '400':
+          description: Invalid input
+        '404':
+          description: Product not found
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    Price:
+      type: object
+      properties:
+        productId:
+          type: integer
+          format: int64
+        brandId:
+          type: integer
+          format: int64
+        priceListId:
+          type: number
+          format: double
+        startDate:
+          type: string
+          format: date
+        endDate:
+          type: string
+          format: date
+        currency:
+          type: string
+        price:
+          type: number
+          format: double
