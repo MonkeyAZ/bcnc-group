@@ -18,7 +18,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import bcnc.group.domain.price.model.Priority;
 import bcnc.group.domain.price.model.ProductPrice;
-import bcnc.group.domain.price.model.dto.ProductPriceQuery;
+import bcnc.group.domain.price.model.dto.query.ProductPriceQuery;
 import bcnc.group.domain.price.ports.repository.ProductPriceRepository;
 
 @ExtendWith(MockitoExtension.class)
