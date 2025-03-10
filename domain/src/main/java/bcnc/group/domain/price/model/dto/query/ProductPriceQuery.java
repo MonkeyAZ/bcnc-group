@@ -1,4 +1,4 @@
-package bcnc.group.domain.price.model.dto;
+package bcnc.group.domain.price.model.dto.query;
 
 import java.time.OffsetDateTime;
 
