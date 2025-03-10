@@ -3,12 +3,10 @@ package bcnc.group.domain.price.model;
 import bcnc.group.domain.price.model.exception.ProductPriceException;
 import bcnc.group.domain.price.model.exception.ProductPriceExceptionEnum;
 import lombok.Data;
-import lombok.Value;
 import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-@Value
 public class Priority {
   private Integer value;
 
