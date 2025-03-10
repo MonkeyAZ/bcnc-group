@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import bcnc.group.domain.price.model.ProductPrice;
-import bcnc.group.domain.price.model.dto.ProductPriceQuery;
+import bcnc.group.domain.price.model.dto.query.ProductPriceQuery;
 import bcnc.group.domain.price.ports.repository.ProductPriceRepository;
 import lombok.RequiredArgsConstructor;
 
