@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>bcnc.group</groupId>
   <artifactId>prices</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <name>prices</name>
   <packaging>pom</packaging>
   <properties>
@@ -14,6 +14,7 @@
     <java.release.version>17</java.release.version>
     <spring-boot.version>3.4.3</spring-boot.version>
     <lombok.version>1.18.36</lombok.version>
+    <junit-jupiter-engine.version>5.11.0-M2</junit-jupiter-engine.version>
   </properties>
   <build>
     <plugins>
