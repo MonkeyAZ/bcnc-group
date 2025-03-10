@@ -3,10 +3,10 @@ package bcnc.group.domain.price.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import bcnc.group.domain.price.exception.PriceException;
-import bcnc.group.domain.price.exception.PriceExceptionEnum;
-
 import org.junit.jupiter.api.Test;
+
+import bcnc.group.domain.price.model.exception.ProductPriceException;
+import bcnc.group.domain.price.model.exception.ProductPriceExceptionEnum;
 
 class ProductPriceIdTest {
 
@@ -18,12 +18,12 @@ class ProductPriceIdTest {
 
   @Test
   void testProductPriceIdWithNullPriceId() {
-    PriceException ex = assertThrows(PriceException.class, () -> new ProductPriceId(null));
-    assertEquals(PriceExceptionEnum.PRICE_ID_MUST_BE_A_POSITIVE_NUMBER.getMessage(), ex.getErrorMessage());
+    ProductPriceException ex = assertThrows(ProductPriceException.class, () -> new ProductPriceId(null));
+    assertEquals(ProductPriceExceptionEnum.PRICE_ID_MUST_BE_A_POSITIVE_NUMBER.getMessage(), ex.getErrorMessage());
   }
   @Test
   void testProductPriceIdWithNegativeNumber() {
-    PriceException ex = assertThrows(PriceException.class, () -> new ProductPriceId(-1L));
-    assertEquals(PriceExceptionEnum.PRICE_ID_MUST_BE_A_POSITIVE_NUMBER.getMessage(), ex.getErrorMessage());
+    ProductPriceException ex = assertThrows(ProductPriceException.class, () -> new ProductPriceId(-1L));
+    assertEquals(ProductPriceExceptionEnum.PRICE_ID_MUST_BE_A_POSITIVE_NUMBER.getMessage(), ex.getErrorMessage());
   }
 }

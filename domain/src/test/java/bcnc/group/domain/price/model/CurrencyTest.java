@@ -3,10 +3,10 @@ package bcnc.group.domain.price.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import bcnc.group.domain.price.exception.PriceException;
-import bcnc.group.domain.price.exception.PriceExceptionEnum;
-
 import org.junit.jupiter.api.Test;
+
+import bcnc.group.domain.price.model.exception.ProductPriceException;
+import bcnc.group.domain.price.model.exception.ProductPriceExceptionEnum;
 
 class CurrencyTest {
 
@@ -18,13 +18,13 @@ class CurrencyTest {
 
   @Test
   void testCurrencyWithNullCurrency() {
-    PriceException ex = assertThrows(PriceException.class, () -> new Currency(null));
-    assertEquals(PriceExceptionEnum.CURRENCY_MUST_BE_A_VALID_CURRENCY.getMessage(), ex.getErrorMessage());
+    ProductPriceException ex = assertThrows(ProductPriceException.class, () -> new Currency(null));
+    assertEquals(ProductPriceExceptionEnum.CURRENCY_MUST_BE_A_VALID_CURRENCY.getMessage(), ex.getErrorMessage());
   }
 
   @Test
   void testCurrencyWithEmptyCurrency() {
-    PriceException ex = assertThrows(PriceException.class, () -> new Currency(""));
-    assertEquals(PriceExceptionEnum.CURRENCY_MUST_BE_A_VALID_CURRENCY.getMessage(), ex.getErrorMessage());
+    ProductPriceException ex = assertThrows(ProductPriceException.class, () -> new Currency(""));
+    assertEquals(ProductPriceExceptionEnum.CURRENCY_MUST_BE_A_VALID_CURRENCY.getMessage(), ex.getErrorMessage());
   }
 }
