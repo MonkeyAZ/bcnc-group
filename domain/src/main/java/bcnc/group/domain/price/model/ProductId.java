@@ -1,7 +1,7 @@
 package bcnc.group.domain.price.model;
 
-import bcnc.group.domain.price.exception.PriceException;
-import bcnc.group.domain.price.exception.PriceExceptionEnum;
+import bcnc.group.domain.price.model.exception.ProductPriceException;
+import bcnc.group.domain.price.model.exception.ProductPriceExceptionEnum;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -17,7 +17,7 @@ public class ProductId {
   private Long validate(Long value) {
 
     if (value == null || value < 0) {
-      throw new PriceException(PriceExceptionEnum.PRODUCT_ID_MUST_BE_A_POSITIVE_NUMBER);
+      throw new ProductPriceException(ProductPriceExceptionEnum.PRODUCT_ID_MUST_BE_A_POSITIVE_NUMBER);
     }
 
     return value;

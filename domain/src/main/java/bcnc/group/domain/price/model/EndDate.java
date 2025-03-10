@@ -2,8 +2,8 @@ package bcnc.group.domain.price.model;
 
 import java.time.OffsetDateTime;
 
-import bcnc.group.domain.price.exception.PriceException;
-import bcnc.group.domain.price.exception.PriceExceptionEnum;
+import bcnc.group.domain.price.model.exception.ProductPriceException;
+import bcnc.group.domain.price.model.exception.ProductPriceExceptionEnum;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -18,7 +18,7 @@ public class EndDate {
 
   private OffsetDateTime validate(OffsetDateTime value) {
     if (value == null) {
-      throw new PriceException(PriceExceptionEnum.END_DATE_MUST_BE_A_VALID_DATE);
+      throw new ProductPriceException(ProductPriceExceptionEnum.END_DATE_MUST_BE_A_VALID_DATE);
     }
     
     return value;
