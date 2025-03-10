@@ -15,4 +15,6 @@ public class ProductPrice {
   private Priority priority;
   private Price price;
   private Currency currency;
+  private CreatedDate createdDate;
+  private UpdatedDate updatedDate;
 }
