@@ -3,6 +3,7 @@ package bcnc.group.domain.price.service;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
@@ -19,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import bcnc.group.domain.price.model.Priority;
 import bcnc.group.domain.price.model.ProductPrice;
 import bcnc.group.domain.price.model.dto.query.ProductPriceQuery;
+import bcnc.group.domain.price.model.exception.ProductPriceNotFoundException;
 import bcnc.group.domain.price.ports.repository.ProductPriceRepository;
 
 @ExtendWith(MockitoExtension.class)
@@ -66,8 +68,10 @@ class ProductPriceServiceTest {
                                 any(LocalDateTime.class)))
                                 .thenReturn(List.of());
 
-                assertNull(productPriceService
-                                .execute(new ProductPriceQuery().setBrandId(0L).setProductId(0L)
-                                                .setDate(LocalDateTime.now())));
+                ProductPriceQuery query = new ProductPriceQuery().setBrandId(0L).setProductId(0L)
+                                .setDate(LocalDateTime.now());
+
+                assertThrows(ProductPriceNotFoundException.class, () -> productPriceService
+                                .execute(query));
         }
 }
