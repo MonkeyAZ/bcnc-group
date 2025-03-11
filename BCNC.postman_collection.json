@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "8487c12f-5e88-48a3-bb3f-5fda18b4e6c4",
+		"name": "BCNC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "986132"
+	},
+	"item": [
+		{
+			"name": "Get Price #1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/prices/35455/1/2020-06-14T10:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"prices",
+						"35455",
+						"1",
+						"2020-06-14T10:00:00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Price #2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/prices/35455/1/2020-06-14T16:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"prices",
+						"35455",
+						"1",
+						"2020-06-14T16:00:00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Price #3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/prices/35455/1/2020-06-14T21:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"prices",
+						"35455",
+						"1",
+						"2020-06-14T21:00:00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Price #4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/prices/35455/1/2020-06-15T10:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"prices",
+						"35455",
+						"1",
+						"2020-06-15T10:00:00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Price #5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/prices/35455/1/2020-06-16T21:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"prices",
+						"35455",
+						"1",
+						"2020-06-16T21:00:00Z"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Price Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/prices/35455/1/2020-06-14T10:00:00Z",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"prices",
+						"35455",
+						"1",
+						"2020-06-14T10:00:00Z"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
