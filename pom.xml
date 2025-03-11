@@ -10,7 +10,7 @@
   </parent>
   <groupId>bcnc.group</groupId>
   <artifactId>prices</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
 
   <properties>
     <maven.surefire.plugin.version>3.5.2</maven.surefire.plugin.version>
