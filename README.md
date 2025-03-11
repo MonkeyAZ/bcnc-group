@@ -25,6 +25,10 @@ After running `mvn clean install` or `mvn clean test` the JaCoCo library
 generates a 'site' folder inside 'target' at the root of the project, which
 can be checked for code coverage information.
 
+- As linting tool the sonar vscode extension was used, which in addition, in 
+a real environment would have a SonarQube instance to use JaCoCo coverage
+reports to generate its reports
+
 - A postman collection file has been added to the repository in order to
 test the API.
 
