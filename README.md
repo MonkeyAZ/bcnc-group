@@ -46,4 +46,4 @@ after having run `mvn clean install`
 
 2. Run from command line
 - Install newman with `npm install -g newman` (Node required)
-- Execute `newman run collection.json`
+- Execute `newman run BCNC.postman_collection.json`
