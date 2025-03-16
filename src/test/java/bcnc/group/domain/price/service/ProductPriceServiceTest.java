@@ -10,6 +10,7 @@ import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -40,33 +41,17 @@ class ProductPriceServiceTest {
         void testExecuteQuery_withSingleResult() {
                 when(productPriceRepository.getPriceByProductBrandAndDate(anyLong(), anyLong(),
                                 any(LocalDateTime.class)))
-                                .thenReturn(List.of(new ProductPrice()));
+                                .thenReturn(Optional.of(new ProductPrice()));
                 assertNotNull(productPriceService
                                 .execute(new ProductPriceQuery().setBrandId(0L).setProductId(0L)
                                                 .setDate(LocalDateTime.now())));
         }
 
         @Test
-        void testExecuteQuery_withMultipleResults() {
-                ProductPrice p1 = new ProductPrice().setPriority(new Priority(10));
-                ProductPrice p2 = new ProductPrice().setPriority(new Priority(20));
-
-                List<ProductPrice> producPriceList = List.of(p1, p2);
-
-                when(productPriceRepository.getPriceByProductBrandAndDate(anyLong(), anyLong(),
-                                any(LocalDateTime.class)))
-                                .thenReturn(producPriceList);
-                assertEquals(20, productPriceService
-                                .execute(new ProductPriceQuery().setBrandId(0L).setProductId(0L)
-                                                .setDate(LocalDateTime.now()))
-                                .getPriority().getValue());
-        }
-
-        @Test
         void testExecuteQuery_withEmptyResult() {
                 when(productPriceRepository.getPriceByProductBrandAndDate(anyLong(), anyLong(),
                                 any(LocalDateTime.class)))
-                                .thenReturn(List.of());
+                                .thenReturn(Optional.empty());
 
                 ProductPriceQuery query = new ProductPriceQuery().setBrandId(0L).setProductId(0L)
                                 .setDate(LocalDateTime.now());

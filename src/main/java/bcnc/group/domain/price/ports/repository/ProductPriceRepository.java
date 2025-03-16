@@ -1,11 +1,11 @@
 package bcnc.group.domain.price.ports.repository;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 
 import bcnc.group.domain.price.model.ProductPrice;
 
 public interface ProductPriceRepository {
-  List<ProductPrice> getPriceByProductBrandAndDate(
+  Optional<ProductPrice> getPriceByProductBrandAndDate(
       Long productId, Long brandId, LocalDateTime date);
 }

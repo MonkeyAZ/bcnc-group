@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,7 +39,7 @@ class ProductPriceRepositoryImplTest {
     @Test
     void testGetPriceByProductBrandAndDate() {
         when(jpaProductPriceRepository.getPriceByProductBrandAndDate(anyLong(), anyLong(), any(LocalDateTime.class)))
-                .thenReturn(List.of(new ProductPriceEntity()));
+                .thenReturn(Optional.of(new ProductPriceEntity()));
         assertNotNull(productPriceRepositoryImpl.getPriceByProductBrandAndDate(0L, 0L, LocalDateTime.now()));
     }
 }

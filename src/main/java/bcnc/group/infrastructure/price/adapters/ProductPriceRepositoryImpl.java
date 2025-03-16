@@ -1,7 +1,7 @@
 package bcnc.group.infrastructure.price.adapters;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
@@ -20,11 +20,11 @@ public class ProductPriceRepositoryImpl implements ProductPriceRepository {
     private final ProductPriceEntityMapper productPriceEntityMapper;
 
     @Override
-    public List<ProductPrice> getPriceByProductBrandAndDate(Long productId, Long brandId, LocalDateTime date) {
-        List<ProductPriceEntity> priceByProductBrandAndDate = jpaProductPriceRepository
+    public Optional<ProductPrice> getPriceByProductBrandAndDate(Long productId, Long brandId, LocalDateTime date) {
+        Optional<ProductPriceEntity> priceByProductBrandAndDate = jpaProductPriceRepository
                 .getPriceByProductBrandAndDate(productId, brandId, date);
 
-        return priceByProductBrandAndDate.stream().map(productPriceEntityMapper::toDomain).toList();
+        return Optional.ofNullable(productPriceEntityMapper.toDomain(priceByProductBrandAndDate.orElse(null)));
     }
 
 }
