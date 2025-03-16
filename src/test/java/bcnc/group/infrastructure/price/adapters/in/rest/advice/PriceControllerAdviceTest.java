@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import bcnc.group.domain.price.model.exception.ProductPriceException;
 import bcnc.group.domain.price.model.exception.ProductPriceExceptionEnum;
 import bcnc.group.domain.price.model.exception.ProductPriceNotFoundException;
+import bcnc.group.openapi.model.CommonError;
 
 class PriceControllerAdviceTest {
     @Test
@@ -19,9 +20,10 @@ class PriceControllerAdviceTest {
         ProductPriceException exception = new ProductPriceException(
                 ProductPriceExceptionEnum.BRAND_ID_MUST_BE_A_POSITIVE_NUMBER);
 
-        ResponseEntity<String> result = priceControllerAdvice.handleEmptyInput(exception);
+        ResponseEntity<CommonError> result = priceControllerAdvice.handleEmptyInput(exception);
 
-        assertEquals(ProductPriceExceptionEnum.BRAND_ID_MUST_BE_A_POSITIVE_NUMBER.getMessage(), result.getBody());
+        assertEquals(ProductPriceExceptionEnum.BRAND_ID_MUST_BE_A_POSITIVE_NUMBER.getMessage(),
+                result.getBody().getMessage());
         assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
     }
 
@@ -31,7 +33,7 @@ class PriceControllerAdviceTest {
         ProductPriceNotFoundException exception = new ProductPriceNotFoundException(
                 0l, 0l, LocalDateTime.now());
 
-        ResponseEntity<String> result = priceControllerAdvice.handleProductPriceNotFoundException(exception);
+        ResponseEntity<CommonError> result = priceControllerAdvice.handleProductPriceNotFoundException(exception);
 
         assertEquals(HttpStatus.NOT_FOUND, result.getStatusCode());
 
