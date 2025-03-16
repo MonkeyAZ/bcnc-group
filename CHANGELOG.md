@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html)
 
+## [0.0.4] - 2025-03-16
+
+### Added
+
+- Custom error response in API
+
+### Changed
+
+- Improved query to filter maximum priority results in db
+- Updated repository to return a single value instead of a list
+
 ## [0.0.3] - 2025-03-11
 
 ### Added
