@@ -1,5 +1,12 @@
 # bcnc-group
 
+## Project Dependencies
+
+- Java JDK 17 (<https://openjdk.org/projects/jdk/17/>)
+- Maven 3.8.7 (<https://maven.apache.org/docs/3.8.7/release-notes.html>)
+
+## Project Description
+
 - This is a Spring Boot application for the BCNC Group Test.
 Its been developed using hexagonal architecture. The application
 implements a functionality to retrieve a product price based on
@@ -25,6 +32,10 @@ After running `mvn clean install` or `mvn clean test` the JaCoCo library
 generates a 'site' folder inside 'target' at the root of the project, which
 can be checked for code coverage information.
 
+- We also have integration testing using the same JUnit 5 library. Using
+the @SpringBootTest ans @AutoConfigureMockMvc annotations, the whole spring
+context is run and the example cases tested
+
 - As linting tool the sonar vscode extension was used, which in addition, in 
 a real environment would have a SonarQube instance to use JaCoCo coverage
 reports to generate its reports
@@ -32,7 +43,7 @@ reports to generate its reports
 - A postman collection file has been added to the repository in order to
 test the API.
 
-## Instructions for testing
+## Instructions for testing with POSTMAN
 
 Before running the tests we will need to make sure our application is running.
 If we followed the instructions from earlier we can run it executing 
