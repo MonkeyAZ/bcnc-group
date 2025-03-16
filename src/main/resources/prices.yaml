@@ -51,12 +51,35 @@ paths:
                 $ref: '#/components/schemas/Price' 
         '400':
           description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonError'
         '404':
           description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonError'
         '500':
           description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonError'
 components:
   schemas:
+    CommonError:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
     Price:
       type: object
       properties:
